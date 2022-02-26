@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        class encriptar{
+            constructor (originalString) { //los parametros de la clase van aqui
+            this.originalString=originalString;
+            }
+
+            print() { //este es un metodo, va dentro de la clase
+                var newString = this.originalString.split(' ');
+                //hago un vector y coloca palabra por palabra
+                var newStringE ='$'; //aqui se almacenara el resultado
+                //le coloco el $ a la cadena de inicio
+                for (let v of newString){ //recorro el vector
+                    v = v.concat('$'); //v es cada palabra y le aumento el $
+                    newStringE += v; //unimos las palabras
+                }
+                return newStringE; //devuelvo el resultado
+            }
+        }
+
+        const m = new encriptar('Hola a todos como estan');
+        //creamos el objeto con new y los parametros
+        document.write(m.print()); //el nuevo objeto hace ref. al método
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
